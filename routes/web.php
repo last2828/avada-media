@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
+  Route::resource('films', 'FilmController')->middleware('admin');
 });
+
+Route::get('/', 'FilmController@index')->name('index_films');
+Route::get('/film/{id}', 'FilmController@show')->name('one_film');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
