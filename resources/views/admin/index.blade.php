@@ -47,7 +47,7 @@
                 <span class="badge badge-success">{{($film->status) ? 'Опубликовано' : 'Черновик'}}</span>
               </td>
               <td class="project-actions text-right">
-                <a class="btn btn-primary btn-sm" href="{{route('show_film', $film->id)}}">
+                <a class="btn btn-primary btn-sm" href="{{route('show_film', $film->id)}}" target="_blank">
                   Просмотреть
                 </a>
                 <a class="btn btn-info btn-sm" href="{{route('films.edit', $film->id)}}">
@@ -56,7 +56,7 @@
                 <form action="{{route('films.destroy', $film->id)}}" method="post">
                   @csrf
                   @method('delete')
-                  <input type="submit" class="btn btn-danger btn-sm" value="Удалить">
+                  <input type="submit" class="btn btn-danger btn-sm" value="Удалить" onclick="confirm('Вы уверены что хотите удалить запись?')">
                 </form>
               </td>
             </tr>
