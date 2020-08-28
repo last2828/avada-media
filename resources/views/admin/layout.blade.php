@@ -86,7 +86,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('index_films')}}">На главную</a></li>
+              <li class="breadcrumb-item"><a href="{{route('home')}}">На главную</a></li>
             </ol>
           </div>
 
