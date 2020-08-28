@@ -18,9 +18,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
   Route::resource('films', 'FilmController')->middleware('admin');
 });
 
-Route::get('/', 'FilmController@index')->name('index_films');
-Route::get('/film/{id}', 'FilmController@show')->name('one_film');
+Route::get('/', 'FilmController@index')->name('home');
+Route::get('/film/{id}', 'FilmController@show')->name('show_film');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
