@@ -56,7 +56,7 @@
         <div class="row">
           <div class="col-12">
             <a href="{{route('films.index')}}" class="btn btn-secondary">Отменить</a>
-            <input type="submit" value="Создать" class="btn btn-success float-right">
+            <input type="submit" value="Сохранить" class="btn btn-success float-right">
           </div>
         </div>
       </form>
