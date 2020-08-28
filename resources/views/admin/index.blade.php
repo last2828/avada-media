@@ -53,7 +53,7 @@
                 <a class="btn btn-info btn-sm" href="{{route('films.edit', $film->id)}}">
                   Изменить
                 </a>
-                <form action="{{route('films.destroy', $film->id)}}" method="post">
+                <form action="{{route('films.destroy', $film->id)}}" style="display: inline-block;" method="post">
                   @csrf
                   @method('delete')
                   <input type="submit" class="btn btn-danger btn-sm" value="Удалить" onclick="confirm('Вы уверены что хотите удалить запись?')">
